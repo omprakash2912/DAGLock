@@ -1,0 +1,34 @@
+DAGLock — Final Project Quick Start
+===================================
+1. Extract the ZIP into a new folder.
+2. Open the extracted folder in VS Code.
+3. Open Terminal > New Terminal at the project root.
+4. Run: npm install
+5. Run: npm run install-all
+6. Run: npm run dev
+7. Open http://localhost:5173
+8. Confirm the sidebar status says API connected.
+
+Tests (backend + Banker’s Lab): npm test
+Banker’s Lab tests only: npm run test:banker --prefix client
+Production frontend build: npm run build
+
+Keep the dev terminal open while using the app. Recovery is simulated only; no real OS process is terminated.
+
+Banker’s Algorithm Lab is available in the sidebar. Example 1 is internally consistent. Example 2 is transcribed exactly from the supplied slide and intentionally flags the apparent P3 / D Maximum < Allocation inconsistency; confirm/correct that value before solving requests.
+
+
+DAGLock v3.2.0 UI patch:
+- “Deadlock remains” is now shown in a red danger banner.
+- Safe result banners are green; unsafe/validation warnings are amber; routine updates are blue.
+- Request edges animate with moving dashes and travelling particles; reduced-motion is respected.
+- Run `npm test` then `npm run build` before presenting.
+
+Banker’s Lab → RAG integration (v3.3.0)
+--------------------------------------
+- In Banker’s Algorithm Lab, edit the Allocation, Maximum Claim, and Available values.
+- Use “Outstanding Request (RAG projection)” for current request edges to be shown in the graph. This is not the one-off request vector used by the resource-request exercise.
+- Fix any validation errors, then click “Visualize in Resource Graph”.
+- The app loads a copy into the main workspace, updates the graph and matrices, and clears stale algorithm results.
+- Use “Restore previous main model” in the graph banner to return to the prior workspace state.
+- Run detection and Banker’s safety separately after projection; they use different vectors by design.
